@@ -622,6 +622,59 @@
       #contacto { padding: 5rem 2rem; }
       .form-row { grid-template-columns: 1fr; }
       .contacto-form { padding: 2rem; }
+      #escritos { padding: 4rem 2rem; }
+    }
+
+  
+    /* ── RECOMENDACIONES ── */
+    #recomendaciones {
+      padding: 8rem 6rem;
+      background: var(--blanco);
+    }
+    .recos-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+    .reco-card {
+      background: var(--crema);
+      border: 1px solid rgba(196,97,74,.2);
+      padding: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: .8rem;
+      transition: transform .3s, box-shadow .3s;
+    }
+    .reco-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 36px rgba(44,26,18,.1);
+    }
+    .reco-card--coming {
+      border-style: dashed;
+      pointer-events: none;
+    }
+    .reco-badge {
+      font-size: .7rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--magenta);
+    }
+    .reco-brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--tierra);
+      line-height: 1;
+    }
+    .reco-desc {
+      font-size: .93rem;
+      line-height: 1.7;
+      color: #6B4C3B;
+      flex: 1;
+    }
+    @media (max-width: 900px) {
+      #recomendaciones { padding: 5rem 2rem; }
+      .recos-grid { grid-template-columns: 1fr; }
     }
 
   </style>
@@ -635,7 +688,7 @@
       <li><a href="#sobre">Proyecto</a></li>
       <li><a href="#servicios">Servicios</a></li>
       <li><a href="#libro">Libro</a></li>
-      <li><a href="#jennifer">Sobre mí</a></li><li><a href="#contacto">Contacto</a></li>
+      <li><a href="#jennifer">Sobre mí</a></li><li><a href="https://substack.com/@ramirezjen" target="_blank">Escritos</a></li><li><a href="#recomendaciones">Tienda</a></li><li><a href="#contacto">Contacto</a></li>
     </ul>
   </nav>
 
@@ -760,6 +813,7 @@
         <div style="margin-top:2.5rem; display:flex; gap:1rem; flex-wrap:wrap;">
           <a href="#servicios" class="btn btn-primary">Ver servicios</a>
           <a href="https://instagram.com/psicojennifer.saludcreativa" target="_blank" class="btn btn-outline">Instagram</a>
+          <a href="https://substack.com/@ramirezjen" target="_blank" class="btn btn-outline" style="border-color:var(--oro); color:var(--oro);">Mis escritos</a>
         </div>
       </div>
     </div>
@@ -793,6 +847,55 @@
         </button>
         <p id="form-ok" style="display:none; text-align:center; margin-top:1rem; color:var(--terracota); font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.1rem;">¡Gracias! Te responderé pronto. 🌿</p>
       </form>
+    </div>
+  </section>
+
+
+
+  <!-- RECOMENDACIONES -->
+  <section id="recomendaciones">
+    <div style="max-width:1200px; margin:0 auto;">
+      <div class="reveal" style="margin-bottom:3.5rem;">
+        <p class="section-label">Lo que uso y recomiendo</p>
+        <h2 class="section-title">Mis <em>favoritos</em></h2>
+        <p style="margin-top:1rem; color:var(--tierra); font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.15rem; line-height:1.7; max-width:52ch;">Productos que forman parte de mi día a día y que recomiendo con total confianza. Algunos tienen descuento especial para ti. 🌿</p>
+      </div>
+      <div class="recos-grid">
+
+        <div class="reco-card reveal">
+          <div class="reco-badge">Moda consciente</div>
+          <h3 class="reco-brand">Aureoli</h3>
+          <p class="reco-desc">Moda con alma. Piezas que cuidan el planeta y a quien las lleva. Mi selección favorita para vestir con intención.</p>
+          <a href="https://aureolightstyle.com/?ref=JENNIFERRAMIREZ" target="_blank" class="btn btn-primary" style="width:100%; text-align:center; margin-top:auto;">Ver colección →</a>
+        </div>
+
+        <div class="reco-card reveal">
+          <div class="reco-badge">Bienestar</div>
+          <h3 class="reco-brand">Belevels</h3>
+          <p class="reco-desc">Suplementación de calidad para cuidar tu energía, tu foco y tu equilibrio. Uso sus productos a diario.</p>
+          <div style="background:var(--crema-oscura); padding:.7rem 1rem; margin:1rem 0; font-size:.82rem; letter-spacing:.1em; text-align:center; color:var(--tierra);">
+            Código descuento: <strong style="color:var(--terracota); font-size:1rem;">SALUDCREATIVA</strong>
+          </div>
+          <a href="https://belevels.com/" target="_blank" class="btn btn-primary" style="width:100%; text-align:center; margin-top:auto;">Descubrir Belevels →</a>
+        </div>
+
+        <div class="reco-card reco-card--coming reveal">
+          <div class="reco-badge" style="opacity:.5;">Próximamente</div>
+          <h3 class="reco-brand" style="opacity:.4;">Más recomendaciones</h3>
+          <p class="reco-desc" style="opacity:.4;">Sigo añadiendo productos que forman parte de mi vida. Vuelve pronto.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SUBSTACK -->
+  <section id="escritos" style="padding:5rem 6rem; background:var(--crema-oscura); text-align:center;">
+    <div class="reveal" style="max-width:600px; margin:0 auto;">
+      <p class="section-label">Newsletter</p>
+      <h2 class="section-title" style="margin-bottom:1.2rem;">Recibe mis <em>escritos</em><br>en tu correo</h2>
+      <p style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.15rem; color:var(--tierra); line-height:1.7; margin-bottom:2rem;">Reflexiones sobre psicología, cuerpo y vida auténtica.<br>Directamente en tu bandeja de entrada.</p>
+      <a href="https://substack.com/@ramirezjen" target="_blank" class="btn btn-primary" style="font-size:.9rem;">Suscribirme en Substack</a>
     </div>
   </section>
 
